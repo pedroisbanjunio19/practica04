@@ -1,0 +1,23 @@
+<div class="card l">
+  <h1>Ejemplo de directiva *ngIf</h1>
+  <hr>
+  <p>Confirme el borrado introduciendo el nombre del repositorio</p>
+  <input type="text" [(ngModel)]="repositorioCheck">
+  <button *ngIf="repositorioCheck === repositorio">Borrar</button>
+  <hr>
+  <h1>Ejemplo de directiva *ngIf con else</h1>
+  <hr>
+  <h2>¿Cual es la capital de España?</h2>
+  <input type="text" [(ngModel)]="capital">
+  <p *ngIf="!capital || capital.length < 6; else completada">Complete la pregunta</p>
+  <ng-template #completada> <!-- # Referencia local-->
+    <p *ngIf="setResultado(); else incorrecto">¡Enhorabuena!</p>
+    <ng-template #incorrecto>
+      <p>Lo sentimos, repita la pregunta por favor</p>
+    </ng-template>
+  </ng-template>
+</div>
+
+<!-- <ng-template [ngIf]="mostrado">
+  <h1>Hola Mundo</h1>
+</ng-template> -->

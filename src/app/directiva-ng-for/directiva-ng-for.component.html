@@ -1,0 +1,26 @@
+<div class="card l">
+  <h1>Ejemplo de directiva *ngFor</h1>
+  <hr>
+  <table>
+    <tr>
+      <th>Nº</th>
+      <th>Nombre</th>
+      <th>Calle</th>
+      <th>Ciudad</th>
+    </tr>
+    <tr *ngFor="let cliente of clientes; let i = index; let j = odd; let k = even">
+      <td>{{'0' + (i + 1) | slice: -2}}</td>
+      <td>{{cliente.nombre}}</td>
+      <td>{{cliente.direccion[0].calle}}</td>
+      <td>{{cliente.direccion[0].ciudad}}</td>
+      <td *ngIf="j">Impar</td>
+      <td *ngIf="k">Par</td>
+    </tr>
+  </table>
+</div>
+<!-- variables locales 
+index: devuelve el número de iteración que se esté procesando.
+last: devuelve un boolean indicando si es o no el último elemento de la iteración. 
+even: devuelve boolean indicando si index tiene valor par. 
+odd: devuelve boolean indicando si index tiene valor impar.
+-->

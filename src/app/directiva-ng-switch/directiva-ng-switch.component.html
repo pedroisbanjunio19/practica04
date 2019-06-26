@@ -1,0 +1,16 @@
+<div class="card l">
+  <h1>Ejemplo de directiva [ngSwitch]</h1>
+  <hr>
+  <div *ngFor="let jugador of jugadores"
+       [ngSwitch]="jugador.equipo">
+    <div class="caja-jugador lakers" *ngSwitchCase="'lakers'">
+      {{jugador.nombre}}
+    </div>
+    <div class="caja-jugador celtics" *ngSwitchCase="'celtics'">
+        {{jugador.nombre}}
+    </div>
+    <div class="caja-jugador bulls" *ngSwitchCase="'bulls'">
+        {{jugador.nombre}}
+    </div>
+  </div>
+</div>
